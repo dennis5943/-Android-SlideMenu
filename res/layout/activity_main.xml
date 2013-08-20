@@ -1,0 +1,26 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity" >
+
+    <com.ui.customview.ScrollMenu
+        android:id="@+id/scrollmenu1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" 
+        app:menu_spacing="64dip"
+        app:menu_layout="@layout/menu_layout"
+        app:content_layout="@layout/content_layout">
+
+    </com.ui.customview.ScrollMenu>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="Button" />
+
+</RelativeLayout>

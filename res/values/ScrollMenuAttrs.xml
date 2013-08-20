@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <declare-styleable name="ScrollMenuAttrs">
+
+        <!-- Spacing value for actions container. -->
+        <attr name="menu_spacing" format="dimension" />
+        <!-- Actions layout ID to link at view creation time. -->
+        <attr name="menu_layout" format="reference"/>
+        <!-- Content layout ID to link at view creation time. -->
+        <attr name="content_layout" format="reference"/>
+        
+    </declare-styleable>
+    
+    <dimen name="default_actionscontentview_spacing">64dip</dimen>
+    <dimen name="default_actionscontentview_actions_spacing">0dip</dimen>
+    
+</resources>
