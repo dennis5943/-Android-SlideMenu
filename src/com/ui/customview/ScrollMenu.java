@@ -174,13 +174,15 @@ public class ScrollMenu extends ViewGroup {
 	private class ScrollController implements GestureDetector.OnGestureListener,Runnable
 	{
 		private Scroller scroller = null;
-		
+		private boolean isScroll = false;
+
 		public ScrollController(Scroller scroller)
 		{
 			this.scroller = scroller;
 		}
 		public boolean onDown(MotionEvent e) {
 			// TODO Auto-generated method stub
+			this.isScroll = (e.getX(0) >= -contentContainer.getScrollX());
 			return false;
 		}
 
@@ -192,18 +194,19 @@ public class ScrollMenu extends ViewGroup {
 
 		public void onLongPress(MotionEvent e) {
 			// TODO Auto-generated method stub
-			
+
 		}
 
 		public boolean onScroll(MotionEvent e1, MotionEvent e2,
 				float distanceX, float distanceY) {
 			// TODO Auto-generated method stub			
-			
-			if (Math.abs(distanceX) < Math.abs(distanceY)) 
+			if(!this.isScroll)
+				return false;
+			else if (Math.abs(distanceX) < Math.abs(distanceY)) 
 				return false;
 			else 
 				this.scrollTo(contentContainer.getScrollX() + (int)distanceX);				
-			
+
 			return true;
 		}
 
